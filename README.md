@@ -11,13 +11,6 @@ The goal is to detect and classify plant leaf diseases to support global food se
 - **Training**: Uses Cross Entropy Loss with Adam optimizer and Multi Margin Loss with SGD, with early stopping to prevent overfitting.
 - **Evaluation Metrics**: Accuracy (99.69% with Adam), precision, recall, and F1-score.
 
-## Repository Contents
-
-- **code/**: Python scripts for data preprocessing, model training, and evaluation.
-- **report/**: Project report (`AIT2104016.pdf`) detailing methodology, results, and analysis.
-- **data/**: Instructions for downloading the PlantVillage dataset.
-- **figures/**: Visualizations of training/validation accuracy and loss.
-
 ## Installation
 
 1. Clone the repository:
