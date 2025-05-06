@@ -4,12 +4,17 @@ This project implements a deep learning model for plant disease classification u
 
 ## Project Overview
 
-The goal is to detect and classify plant leaf diseases to support global food security and sustainable farming. The model leverages computer vision and deep learning, trained on 54,305 leaf images from the PlantVillage dataset, covering 14 plant species and 38 classes (healthy and diseased). Key techniques include:
+This project uses transfer learning with ResNet50 to classify 38 classes of healthy and diseased leaves from 14 plant species in the PlantVillage dataset (54,305 images). Key features:
+- **Model**: ResNet50, fine-tuned with a custom fully connected layer.
+- **Data Augmentation**: Random crops, flips, rotations, color jitter, affine transforms, and erasing.
+- **Training**: Cross Entropy Loss with Adam optimizer (lr=0.0001), StepLR scheduler, and early stopping (patience=5).
+- **Evaluation**: Achieves 99.69% test accuracy, with precision, recall, and F1-score near 1.0.
 
-- **Transfer Learning**: Pre-trained ResNet50 model, fine-tuned for 38-class classification.
-- **Data Augmentation**: Random crops, flips, rotations, color jittering, affine transformations, and erasing to enhance generalization.
-- **Training**: Uses Cross Entropy Loss with Adam optimizer and Multi Margin Loss with SGD, with early stopping to prevent overfitting.
-- **Evaluation Metrics**: Accuracy (99.69% with Adam), precision, recall, and F1-score.
+## Repository Contents
+
+- **code/**: Jupyter Notebook (`code.ipynb`) for preprocessing, training, and evaluation.
+- **data/**: Instructions for downloading PlantVillage dataset.
+- **figures/**: Training/validation accuracy and loss plots.
 
 ## Installation
 
@@ -19,36 +24,35 @@ The goal is to detect and classify plant leaf diseases to support global food se
    ```
 2. Install dependencies:
    ```bash
-   pip install torch torchvision numpy matplotlib pandas
+   pip install torch torchvision numpy matplotlib pandas sklearn
    ```
-3. Download the PlantVillage dataset and place it in the `data/` folder (see `data/README.md` for details).
+3. Download the [PlantVillage dataset](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset?select=color) and place it in `data/`.
 
 ## Usage
 
-1. Preprocess the dataset:
-   ```bash
-   python code/preprocess.py
-   ```
-2. Train the model:
-   ```bash
-   python code/train.py --optimizer adam --loss cross_entropy
-   ```
-3. Evaluate the model:
-   ```bash
-   python code/evaluate.py
-   ```
+Run the Jupyter Notebook (`code.ipynb`) to:
+1. Preprocess data and apply augmentations.
+2. Train the model (ResNet50 with Adam optimizer).
+3. Evaluate performance and generate plots.
+
+Example command to start Jupyter:
+```bash
+jupyter notebook code.ipynb
+```
 
 ## Results
 
-- **Cross Entropy Loss + Adam**: 99.69% test accuracy, with precision/recall/F1-score near 1.0 for most classes.
-- **Multi Margin Loss + SGD**: 94.61% test accuracy, showing stable but less optimal performance.
-- Visualizations of training/validation accuracy and loss are in the `figures/` directory.
+- **Accuracy**: 99.69% on test set (Cross Entropy + Adam).
+- **Metrics**: Precision, recall, and F1-score near 1.0 for most classes.
+- **Plots**: Training/validation accuracy and loss in `figures/`.
 
 ## Future Work
 
-- Expand dataset with real-world, noisy images.
+- Add real-world image testing.
 - Optimize for mobile deployment.
-- Explore newer architectures like EfficientNet or Vision Transformers.
+- Explore EfficientNet or Vision Transformers.
+
+
 
 
 
