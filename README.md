@@ -16,8 +16,10 @@ This project uses transfer learning with ResNet50 to classify 38 classes of heal
 - **data/**: Instructions for downloading PlantVillage dataset.
 - **figures/**: Training and validation plots:
   - ![image](https://github.com/user-attachments/assets/bc6c00c9-9850-4b12-9bb6-8dc802aba24b)
+
     Training and validation accuracy over epochs.
   - ![image](https://github.com/user-attachments/assets/2c4d3681-74ad-45f3-8d39-222f0a2a3ae1)
+
     Training and validation loss over epochs.
 
 ## Installation
