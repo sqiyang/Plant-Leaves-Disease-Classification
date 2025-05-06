@@ -14,7 +14,12 @@ This project uses transfer learning with ResNet50 to classify 38 classes of heal
 
 - **code/**: Jupyter Notebook (`code.ipynb`) for preprocessing, training, and evaluation.
 - **data/**: Instructions for downloading PlantVillage dataset.
-- **figures/**: Training/validation accuracy and loss plots.
+- **figures/**: Training and validation plots:
+
+   ![image](https://github.com/user-attachments/assets/ae5d0a97-ecc9-41bb-bfe6-c7c98e1b30ac)
+  : Training and validation accuracy over epochs.
+  ![image](https://github.com/user-attachments/assets/1f0b7c91-9fd8-45f1-8a33-f89c942709d2)
+  : Training and validation loss over epochs.
 
 ## Installation
 
